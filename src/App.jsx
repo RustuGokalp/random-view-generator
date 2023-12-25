@@ -1,10 +1,25 @@
 import "./App.css";
-import Course from "./Course";
+import { useState } from "react";
+import View from "./View";
+
+function getRandomView() {
+  const viewArray = ["City", "Mountain", "Sea", "Summer"];
+  return viewArray[Math.floor(Math.random() * viewArray.length)];
+}
 
 function App() {
+  const [view, setView] = useState([]);
+  const showView = () => {
+    setView([...view, getRandomView()]);
+  };
+  const viewList = view.map((view, index) => {
+    return <View key={index} viewName={view} />;
+  });
+
   return (
     <>
-      <Course />
+      <button onClick={showView}>Show The View</button>
+      <div>{viewList}</div>
     </>
   );
 }

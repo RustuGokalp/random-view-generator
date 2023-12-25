@@ -1,11 +1,15 @@
-import "./Course.css";
+import "./View.css";
 import cityView from "./images/city-view.webp";
 import mountainView from "./images/mountain-view.png";
 import seaView from "./images/sea-view.png";
 import summerView from "./images/summer-view.webp";
 
-function Course() {
-  return <div></div>;
+function View({ viewName }) {
+  return (
+    <div>
+      <img src={cityView} alt="City View" />
+    </div>
+  );
 }
 
-export default Course;
+export default View;
